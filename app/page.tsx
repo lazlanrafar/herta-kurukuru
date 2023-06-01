@@ -1,17 +1,22 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   const [count, setCount] = useState(0);
+  const [audioList, setAudioList] = useState([] as any[]);
 
-  const audioList = [
-    new Audio("/kuru2.mp3") as any,
-    new Audio("/kuruto.mp3") as any,
-  ];
+  useEffect(() => {
+    const audioList: any[] = [
+      new Audio("/kuru2.mp3"),
+      new Audio("/kuruto.mp3"),
+    ];
 
-  for (const iterator of audioList) {
-    iterator.preload = "auto";
-  }
+    for (const iterator of audioList) {
+      iterator.preload = "auto";
+    }
+
+    setAudioList(audioList);
+  }, []);
 
   const squish = () => {
     setCount(count + 1);
