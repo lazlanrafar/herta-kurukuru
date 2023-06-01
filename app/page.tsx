@@ -86,6 +86,15 @@ export default function Home() {
       <button className="bg-[#0141ff] py-2 px-5 rounded-lg" onClick={squish}>
         Squish the kuru~!
       </button>
+
+      <div className="absolute top-10 right-10">
+        <a
+          className="text-white text-sm px-3 py-2 rounded-lg border border-slate-500"
+          href="https://github.com/lazlanrafar/herta-kurukuru"
+        >
+          Source Code 😍
+        </a>
+      </div>
     </main>
   );
 }
